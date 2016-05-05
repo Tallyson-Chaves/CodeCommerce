@@ -6,12 +6,22 @@ use Illuminate\Http\Request;
 
 use CodeCommerce\Http\Requests;
 
+use CodeCommerce\Category;
+
 class ExemploController extends Controller
 {
+    private $categories;
+
+    public function __construct(Category $category) {
+        $this->categories = $category;
+    }
+    
+    
     public function exemplo(){
         
-        $nome = "Tallyson";
+        $categories = $this->categories->all();
+        $title = "MainFrame";
         
-        return view('exemplo')->with( 'nome', $nome);
+        return view('exemplo',  compact('categories' , 'title'));
     }
 }
