@@ -8,7 +8,7 @@
         <div class="container">
             <h1>Teste de Classe</h1>
             <h2>Isto é uma classe</h2>
-            <p>Até que enfim aprendi =)</p>
+            <p>Olá {{ $nome }}</p>
         </div>
     </body>
 </html>

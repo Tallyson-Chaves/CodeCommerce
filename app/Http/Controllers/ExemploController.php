@@ -9,6 +9,9 @@ use CodeCommerce\Http\Requests;
 class ExemploController extends Controller
 {
     public function exemplo(){
+        
+        $nome = "Tallyson";
+        
         return view('exemplo')->with( 'nome', $nome);
     }
 }
