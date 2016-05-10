@@ -20,6 +20,6 @@ class AdminCategoriesController extends Controller
         
         $categories = $this->categories->all();
         
-        return view('admin/categories',  compact('categories'));
+        return view('admin.categories',  compact('categories'));
     }
 }

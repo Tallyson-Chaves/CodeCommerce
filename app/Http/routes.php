@@ -11,8 +11,16 @@
 |
 */
 
+Route::pattern('id', '[0-9]+');
+
 Route::get('/', 'IndexController@index');
 
-Route::get('admin/categories', 'AdminCategoriesController@index');
+Route::group(['prefix' => 'admin', 'as' => 'admin::'], function(){
+	
+	Route::get('categories/{id?}', ['as' => 'categories', 'uses' => 'AdminCategoriesController@index']);
 
-Route::get('admin/products', 'AdminProductsController@index');
+	Route::get('products/{id?}', ['as' => 'products', 'uses' => 'AdminProductsController@index']);
+
+});
+
+

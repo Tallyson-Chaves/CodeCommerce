@@ -20,6 +20,6 @@ class AdminProductsController extends Controller
         
         $products = $this->products->all();
         
-        return view('admin/products',  compact('products'));
+        return view('admin.products',  compact('products'));
     }
 }
