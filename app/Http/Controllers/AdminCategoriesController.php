@@ -13,6 +13,7 @@ class AdminCategoriesController extends Controller
     private $categories;
 
     public function __construct(Category $category) {
+
         $this->categories = $category;
     }
     
@@ -21,5 +22,21 @@ class AdminCategoriesController extends Controller
         $categories = $this->categories->all();
         
         return view('admin.categories',  compact('categories'));
+    }
+
+    public function create(){
+
+    	return view('admin.create');
+    }
+
+    public function store(Request $request){
+
+    	$input = $request->all();
+
+    	$category = $this->categories->fill($input);
+
+    	$category->save();
+
+    	return redirect('admin/categories');
     }
 }

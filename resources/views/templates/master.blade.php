@@ -7,17 +7,15 @@
     </head>
     <body>
         @section('header')
-        <div class="container">
-            <h1><a href="/">Code Commerce</a></h1>
-        </div>
+
         @show
         @section('menu')
-            <div class="container">
+            <div>
                 <nav class="navbar navbar-default">
+                    <a class="navbar-brand" href="/">Code Commerce</a>
                     <ul class="nav navbar-nav">
-                        <li><a href="<?php $url = route('home'); echo $url; ?>">Home</a></li>
-                        <li><a href="<?php $url = route('admin::products'); echo $url; ?>">Admin Products</a></li>
-                        <li><a href="<?php $url = route('admin::categories'); echo $url; ?>">Admin Categories</a></li>
+                        <li><a href="{!! $url = route('admin::products'); !!}">Admin Products</a></li>
+                        <li><a href="{!! $url = route('admin::categories'); !!}">Admin Categories</a></li>
                     </ul>
                 </nav>
             </div>

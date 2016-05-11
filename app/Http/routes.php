@@ -21,7 +21,13 @@ Route::group(['prefix' => 'admin', 'as' => 'admin::'], function(){
 	
 	Route::get('categories/{id?}', ['as' => 'categories', 'uses' => 'AdminCategoriesController@index']);
 
+	Route::get('categories/create', ['as' => 'category/create', 'uses' => 'AdminCategoriesController@create']);
+
+	Route::post('categories', ['as' => 'category/store', 'uses' => 'AdminCategoriesController@store']);
+
 	Route::get('products/{id?}', ['as' => 'products', 'uses' => 'AdminProductsController@index']);
+
+
 
 });
 
