@@ -13,7 +13,9 @@
 
 Route::pattern('id', '[0-9]+');
 
-Route::get('/', 'IndexController@index');
+Route::get('/', ['as' => 'home', 'uses' => 'IndexController@index']);
+
+Route::get('/exemplo', 'ExemploController@exemplo');
 
 Route::group(['prefix' => 'admin', 'as' => 'admin::'], function(){
 	
