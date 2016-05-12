@@ -14,8 +14,8 @@ class AdminCategoriesController extends Controller
 
     public function __construct(Category $category) {
 
-        $this->categories = $category;
-    }
+        $this->categories = $category; 
+     }
     
     public function index(){
         
@@ -29,7 +29,7 @@ class AdminCategoriesController extends Controller
     	return view('admin.create');
     }
 
-    public function store(Request $request){
+    public function store(Requests\categoryRequest  $request){
 
     	$input = $request->all();
 

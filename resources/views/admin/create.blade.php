@@ -3,11 +3,9 @@
 @section('title', 'CodeCommerce - Admin Categories Create')
 
 @section('content')
-		
 
-		<h3 class="page-header">Admin Categories Create</h3>
-
-		
+        <h3 class="page-header">Admin Categories Create</h3>
+	
     	<div class="form-group">
 	    	{!! Form::open(['url' => 'admin/categories']); !!}
 

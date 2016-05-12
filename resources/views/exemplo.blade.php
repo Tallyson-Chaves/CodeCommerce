@@ -8,4 +8,3 @@
     <?php print_r(array_values($teste)); ?>
 
 </ul>
-
