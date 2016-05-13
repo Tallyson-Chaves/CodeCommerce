@@ -14,8 +14,8 @@
                 <nav class="navbar navbar-default">
                     <a class="navbar-brand" href="/">Code Commerce</a>
                     <ul class="nav navbar-nav">
-                        <li><a href="{!! $url = route('admin::products'); !!}">Admin Products</a></li>
-                        <li><a href="{!! $url = route('admin::categories'); !!}">Admin Categories</a></li>
+                        <li><a href="{!! $url = route('admin::products') !!}">Admin Products</a></li>
+                        <li><a href="{!! $url = route('admin::categories') !!}">Admin Categories</a></li>
                     </ul>
                 </nav>
             </div>

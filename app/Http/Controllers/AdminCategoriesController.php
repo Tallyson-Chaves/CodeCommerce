@@ -2,11 +2,10 @@
 
 namespace CodeCommerce\Http\Controllers;
 
-use Illuminate\Http\Request;
+use CodeCommerce\Category;
 
 use CodeCommerce\Http\Requests;
 
-use CodeCommerce\Category;
 
 class AdminCategoriesController extends Controller
 {
@@ -38,5 +37,13 @@ class AdminCategoriesController extends Controller
     	$category->save();
 
     	return redirect('admin/categories');
+    }
+
+    public function destroy($id){
+
+        $this->categories->find($id)->delete();
+
+        return redirect('admin/categories');
+
     }
 }

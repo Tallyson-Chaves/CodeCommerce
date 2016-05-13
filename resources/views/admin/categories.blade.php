@@ -20,7 +20,7 @@
 						<td>{{ $category->id }}</td>
 						<td>{{ $category->name }}</td>
 						<td>{{ $category->description }}</td>
-						<td></td>
+						<td><a class="btn btn-danger" href="{!! $url = route('admin::categories.destroy',['id' => $category->id]) !!}">Delete</a> </td>
 					</tr>
 				@endforeach
 			</tbody>

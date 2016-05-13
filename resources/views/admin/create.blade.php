@@ -4,6 +4,17 @@
 
 @section('content')
 
+		@if($errors->any())
+			<ul>
+				@foreach($errors->all() as $error)
+					<li class="alert alert-danger">
+						<spam class="glyphicon glyphicon-remove-sign"></spam>
+						{{ $error }}
+					</li>
+				@endforeach
+			</ul>
+		@endif
+
         <h3 class="page-header">Admin Categories Create</h3>
 	
     	<div class="form-group">
