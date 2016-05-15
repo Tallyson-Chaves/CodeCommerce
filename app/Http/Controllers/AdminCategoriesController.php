@@ -25,7 +25,7 @@ class AdminCategoriesController extends Controller
 
     public function create(){
 
-    	return view('admin.create');
+    	return view('admin/categoryCreate');
     }
 
     public function store(Requests\categoryRequest  $request){

@@ -4,7 +4,7 @@
 
 @section('content')
 		<h3 class="page-header">Admin Products</h3>
-		<a class="btn btn-primary" href="categories/create">Create New</a>
+		<a class="btn btn-primary" href="products/create">Create New</a>
     	<table class="table table-striped">
 			<thead>
 				<tr>
@@ -12,19 +12,40 @@
 					<th>Name</th> 
 					<th>Description</th>
 					<th>Price</th>
+					<th>Featured</th>
+					<th>Recommend</th>
 					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
+				@foreach ($products as $product)
 				<tr>
-					@foreach ($products as $product)
+
 						<td>{{ $product->id }}</td>
 						<td>{{ $product->name }}</td>
 						<td>{{ $product->description }}</td>
 						<td>US$ {{ $product->price }}</td>
-						<td></td>
-					@endforeach
+						<td>
+
+							@if( $product->featured == 1)
+								<input type="checkbox" checked="checked" value="" disabled>
+							@else
+								<input type="checkbox" value="" disabled>
+							@endif
+
+						</td>
+						<td>
+
+							@if( $product->recommend == 1)
+								<input type="checkbox" checked="checked" value="" disabled>
+							@else
+								<input type="checkbox" value="" disabled>
+							@endif
+
+						</td>
+						<td><a class="btn btn-danger" href="{!! $url = route('admin::products.destroy',['id' => $product->id]) !!}">Delete</a></td>
 				</tr>
+				@endforeach
 			</tbody>
     	</table>
 @endsection

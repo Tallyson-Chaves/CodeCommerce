@@ -20,6 +20,38 @@ class AdminProductsController extends Controller
         
         $products = $this->products->all();
         
-        return view('admin.products',  compact('products'));
+        return view('admin/products',  compact('products'));
+    }
+
+    public function create(){
+
+        return view('admin/productCreate');
+    }
+
+    public function store(Requests\productRequest  $request){
+
+        $input = $request->all();
+
+        $product = $this->products->fill($input);
+
+        $product->save();
+
+        return redirect('admin/products');
+    }
+
+    public function destroy($id)
+    {
+
+        $this->products->find($id)->delete();
+
+        return redirect('admin/products');
+    }
+
+    public function push($id)
+    {
+
+        $this->products->find($id)->all();
+
+        return view('admin/productUpdate');
     }
 }
