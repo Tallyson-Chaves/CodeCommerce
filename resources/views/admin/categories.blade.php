@@ -12,6 +12,7 @@
 					<th>Name</th> 
 					<th>Description</th>
 					<th>Action</th>
+					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -21,6 +22,7 @@
 						<td>{{ $category->name }}</td>
 						<td>{{ $category->description }}</td>
 						<td><a class="btn btn-danger" href="{!! $url = route('admin::categories.destroy',['id' => $category->id]) !!}">Delete</a> </td>
+						<td><a class="btn btn-primary" href="{!! $url = route('admin::category.push',['id' => $category->id]) !!}">Update</a> </td>
 					</tr>
 				@endforeach
 			</tbody>

@@ -47,10 +47,18 @@ class AdminCategoriesController extends Controller
 
     }
 
-    public function put($id){
+    public function push($id){
 
-        $category = $this->categories->find($id)->all();
+        $category = $this->categories->find($id);
 
-        return view('categoryUpdate', compact('category'));
+        return view('admin/categoryUpdate', compact('category'));
+    }
+
+    public function update(Requests\categoryRequest $request, $id){
+
+        $this->categories->find($id)->update($request->all());
+
+        return redirect('admin/categories');
+
     }
 }

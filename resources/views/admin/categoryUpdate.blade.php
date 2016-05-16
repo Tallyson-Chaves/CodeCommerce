@@ -18,7 +18,7 @@
         <h3 class="page-header">Admin Categories edit: {{ $category->name }}</h3>
 	
     	<div class="form-group">
-	    	{!! Form::open(['url' => 'admin/categories']); !!}
+	    	{!! Form::open(['route'=>['admin::category.update', $category->id], 'method'=>'put']) !!}
 
 	    		{!! Form::label('name', 'Name:') !!}
 	    		{!! Form::text('name', $category->name, ['class'=>'form-control']) !!}
@@ -35,6 +35,6 @@
 			{!! Form::submit('Add Category',['class'=>'btn btn-primary form-group']) !!}
 
 		</div>
-	    	{!! Form::close(); !!}
+	    	{!! Form::close() !!}
     	
 @endsection

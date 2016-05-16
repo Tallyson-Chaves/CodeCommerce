@@ -30,6 +30,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin::'], function(){
     Route::get('categories/{id?}/destroy', ['as' => 'categories.destroy', 'uses' => 'AdminCategoriesController@destroy']);
 
 	Route::post('categories', ['as' => 'category.store', 'uses' => 'AdminCategoriesController@store']);
+	
+	Route::get('categories/{id?}/push', ['as' => 'category.push', 'uses' => 'AdminCategoriesController@push']);
+
+	Route::put('categories/{id?}/update', ['as' => 'category.update', 'uses' => 'AdminCategoriesController@update']);
 
 	//:::::::::::::Products Routes::::::::::::::::
 
