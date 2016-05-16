@@ -2,8 +2,6 @@
 
 namespace CodeCommerce\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use CodeCommerce\Http\Requests;
 
 use CodeCommerce\Product;
@@ -50,8 +48,17 @@ class AdminProductsController extends Controller
     public function push($id)
     {
 
-        $this->products->find($id)->all();
+        $product = $this->products->find($id);
 
-        return view('admin/productUpdate');
+        return view('admin/productUpdate', compact('product'));
+    }
+
+    public function update (Requests\productRequest $request, $id)
+    {
+
+        $this->products->find($id)->update($request->all());
+
+        return redirect('admin/products');
+
     }
 }

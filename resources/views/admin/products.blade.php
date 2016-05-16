@@ -15,6 +15,7 @@
 					<th>Featured</th>
 					<th>Recommend</th>
 					<th>Action</th>
+					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -28,7 +29,7 @@
 						<td>
 
 							@if( $product->featured == 1)
-								<input type="checkbox" checked="checked" value="" disabled>
+								<input type="checkbox" checked="checked" disabled>
 							@else
 								<input type="checkbox" value="" disabled>
 							@endif
@@ -37,13 +38,14 @@
 						<td>
 
 							@if( $product->recommend == 1)
-								<input type="checkbox" checked="checked" value="" disabled>
+								<input type="checkbox" checked="checked" disabled>
 							@else
 								<input type="checkbox" value="" disabled>
 							@endif
 
 						</td>
 						<td><a class="btn btn-danger" href="{!! $url = route('admin::products.destroy',['id' => $product->id]) !!}">Delete</a></td>
+						<td><a class="btn btn-primary" href="{!! $url = route('admin::products.push',['id' => $product->id]) !!}">Modify</a></td>
 				</tr>
 				@endforeach
 			</tbody>

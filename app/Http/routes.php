@@ -41,7 +41,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin::'], function(){
 
 	Route::post('products', ['as' => 'products.store', 'uses' => 'AdminProductsController@store']);
 
-	Route::get('products/update', ['as' => 'products.update', 'uses' => 'AdminProductsController@update']);
+	Route::get('products/{id?}/push', ['as' => 'products.push', 'uses' => 'AdminProductsController@push']);
+
+	Route::put('products/{id?}/update', ['as' => 'products.update', 'uses' => 'AdminProductsController@update']);
 
 });
 

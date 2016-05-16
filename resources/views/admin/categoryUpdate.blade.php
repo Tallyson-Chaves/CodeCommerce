@@ -1,6 +1,6 @@
 @extends('templates.master')
 
-@section('title', 'CodeCommerce - Admin Categories Create')
+@section('title', 'CodeCommerce - Admin Categories Update')
 
 @section('content')
 
@@ -15,19 +15,19 @@
 			</ul>
 		@endif
 
-        <h3 class="page-header">Admin Categories Create</h3>
+        <h3 class="page-header">Admin Categories edit: {{ $category->name }}</h3>
 	
     	<div class="form-group">
 	    	{!! Form::open(['url' => 'admin/categories']); !!}
 
 	    		{!! Form::label('name', 'Name:') !!}
-	    		{!! Form::text('name', null, ['class'=>'form-control']) !!}
+	    		{!! Form::text('name', $category->name, ['class'=>'form-control']) !!}
 
 		</div>
 		<div class="form-group">
 
 			{!! Form::label('description', 'Description:') !!}
-    		{!! Form::textarea('description', null, ['class'=>'form-control']) !!}
+    		{!! Form::textarea('description', $category->description, ['class'=>'form-control']) !!}
 
 		</div>
 		<div class="form-group">
@@ -35,6 +35,6 @@
 			{!! Form::submit('Add Category',['class'=>'btn btn-primary form-group']) !!}
 
 		</div>
-	    	{!! Form::close() !!}
+	    	{!! Form::close(); !!}
     	
 @endsection
