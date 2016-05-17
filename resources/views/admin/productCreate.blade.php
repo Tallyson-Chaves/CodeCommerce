@@ -45,13 +45,13 @@
 			<div class="form-group">
 
                 {!! Form::label('featured', 'Featured:') !!}
-				{!! Form::checkbox('featured', '1') !!}
+				{!! Form::select('featured', array('0' => 'No', '1' => 'Yes')) !!}
 
 			</div>
 			<div class="form-group">
 
 				{!! Form::label('recommend', 'Recommend') !!}
-				{!! Form::checkbox('recommend', '1') !!}
+				{!! Form::select('recommend', array('0' => 'No', '1' => 'Yes')) !!}
 
 			</div>
 		</div>

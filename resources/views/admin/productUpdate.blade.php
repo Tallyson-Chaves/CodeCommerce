@@ -44,13 +44,32 @@
 			<div class="form-group">
 
                 {!! Form::label('featured', 'Featured:') !!}
-				{!! Form::checkbox('featured', $product->featured) !!}
+
+				@if($product->featured == 1)
+
+				{!! Form::select('featured', array('1' => 'Yes', '0' => 'No')) !!}
+
+				@else
+
+				{!! Form::select('featured', array('0' => 'No', '1' => 'Yes')) !!}
+
+				@endif
+
 
 			</div>
 			<div class="form-group">
 
 				{!! Form::label('recommend', 'Recommend') !!}
-				{!! Form::checkbox('recommend', $product->recommend) !!}
+
+				@if($product->recommend == 1)
+
+					{!! Form::select('recommend', array('1' => 'Yes', '0' => 'No')) !!}
+
+				@else
+
+					{!! Form::select('recommend', array('0' => 'No', '1' => 'Yes')) !!}
+
+				@endif
 
 			</div>
 		</div>
