@@ -47,7 +47,7 @@
 
 				@if($product->featured == 1)
 
-				{!! Form::select('featured', array('1' => 'Yes', '0' => 'No')) !!}
+				{!! Form::select('featured', [array('1' => 'Yes', '0' => 'No')]) !!}
 
 				@else
 
